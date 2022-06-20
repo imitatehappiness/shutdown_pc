@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/img">
         <file>clock.png</file>
-        <file>tenor.gif</file>
         <file>cat.gif</file>
     </qresource>
 </RCC>

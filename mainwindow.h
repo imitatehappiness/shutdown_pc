@@ -7,7 +7,8 @@
 #include <QMessageBox>
 #include <QPixmap>
 #include <QMovie>
-#include <popup.h>.h>
+#include <popup.h>
+#include <dialog.h>
 namespace Ui {
 class MainWindow;
 }
@@ -21,6 +22,7 @@ public:
     ~MainWindow();
     void timer();
 
+    bool f = 0;
 
     QTimer *time;
     QTimer *timer_sec;
@@ -30,6 +32,7 @@ private slots:
     void shutdown();
     void update_label();
     void on_stop_clicked();
+    void slot_shutdown();
 
 private:
     Ui::MainWindow *ui;

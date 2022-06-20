@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>223</height>
+    <width>447</width>
+    <height>245</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,7 +49,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-     background-color: #323232;
+     background-color: #233738;
 	border: none;
 color: #EEEEEE;
      border-radius: 3px;
@@ -61,10 +61,10 @@ color: #EEEEEE;
 
 
 QPushButton:hover{
-         background-color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 #ED765E, stop:1 #FEA858);
-		color: #323232;
+   background-color:#EEEEEE;
+	color: #233738;
      border-radius: 3px;
-	border: 2px solid #323232
+	border: 2px solid #233738;
 
 }
 
@@ -72,7 +72,7 @@ QPushButton:hover{
 
 QPushButton:pressed {
        
- border: 3px solid #EEEEEE;
+ border: 3px solid #233738;
      border-radius:3px;
 }</string>
      </property>
@@ -85,12 +85,13 @@ QPushButton:pressed {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>151</width>
+       <width>451</width>
        <height>261</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">   background-color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 #ED765E, stop:1 #FEA858);</string>
+      <string notr="true">
+   background-color:#EEEEEE;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -101,9 +102,9 @@ QPushButton:pressed {
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>140</y>
-        <width>131</width>
+        <width>141</width>
         <height>41</height>
        </rect>
       </property>
@@ -115,10 +116,11 @@ QPushButton:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #FBF0F0</string>
+       <string notr="true">color: #233738;
+    background-color:  none;</string>
       </property>
       <property name="text">
-       <string>MINUTES:</string>
+       <string>  MINUTES:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -138,7 +140,9 @@ QPushButton:pressed {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #FBF0F0;</string>
+       <string notr="true">color: #233738;
+    background-color:  none;
+</string>
       </property>
       <property name="text">
        <string>HOURS:</string>
@@ -149,7 +153,7 @@ QPushButton:pressed {
        <rect>
         <x>10</x>
         <y>100</y>
-        <width>131</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
@@ -161,7 +165,7 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QSpinBox{
-	 background-color: #323232;
+	 background-color: #233738;
 		border: none;
 		color: #FBF0F0;
 	border-radius: 5px;
@@ -181,7 +185,7 @@ border: 2px solid #323232
        <rect>
         <x>10</x>
         <y>180</y>
-        <width>131</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
@@ -193,7 +197,7 @@ border: 2px solid #323232
       </property>
       <property name="styleSheet">
        <string notr="true">QSpinBox{
-	 background-color: #323232;
+	 background-color: #233738;
 		color: #FBF0F0;
 	border-radius: 5px;
 border: 2px solid #323232
@@ -213,10 +217,10 @@ border: 2px solid #323232
      <widget class="QLabel" name="last_time">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>31</height>
+        <x>160</x>
+        <y>150</y>
+        <width>271</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -227,7 +231,8 @@ border: 2px solid #323232
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #323232</string>
+       <string notr="true">color: #233738;
+    background-color:  none;</string>
       </property>
       <property name="text">
        <string/>
@@ -236,19 +241,6 @@ border: 2px solid #323232
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-    </widget>
-    <widget class="QLabel" name="gif">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>40</y>
-       <width>150</width>
-       <height>150</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
     </widget>
     <widget class="QPushButton" name="stop">
      <property name="geometry">
@@ -267,7 +259,7 @@ border: 2px solid #323232
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-     background-color: #323232;
+     background-color: #233738;
 	border: none;
 color: #EEEEEE;
      border-radius: 3px;
@@ -279,10 +271,10 @@ color: #EEEEEE;
 
 
 QPushButton:hover{
-        background-color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 #ED765E, stop:1 #FEA858);
-		color: #323232;
+   background-color:#EEEEEE;
+	color: #233738;
      border-radius: 3px;
-	border: 2px solid #323232
+	border: 2px solid #233738;
 
 }
 
@@ -290,7 +282,7 @@ QPushButton:hover{
 
 QPushButton:pressed {
        
- border: 3px solid #EEEEEE;
+ border: 3px solid #233738;
      border-radius:3px;
 }</string>
      </property>
@@ -301,21 +293,22 @@ QPushButton:pressed {
     <widget class="QProgressBar" name="progressBar">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>10</x>
        <y>10</y>
-       <width>271</width>
-       <height>21</height>
+       <width>421</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">QProgressBar::chunk {
-     background-color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 #ED765E, stop:1 #FEA858);
+   background-color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 #000000, stop:1 #233738);
     border-radius: 2px;
    
  }
 
  QProgressBar {
-   
+   background: #EEEEEE;
+
 	border: 1px solid rgb(33,33,33);
      border-radius: 4px;
      padding: 3px;
@@ -336,7 +329,6 @@ border-width: 2px;
      </property>
     </widget>
     <zorder>frame</zorder>
-    <zorder>gif</zorder>
     <zorder>shutdown</zorder>
     <zorder>stop</zorder>
     <zorder>progressBar</zorder>
