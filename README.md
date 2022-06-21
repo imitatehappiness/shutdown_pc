@@ -1,1 +1,1 @@
-# shutdown_pc
+# pc shutdown timer
