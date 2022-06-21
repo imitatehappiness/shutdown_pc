@@ -6,9 +6,7 @@
 
 
 // https://evileg.com/ru/post/146/
-
-PopUp::PopUp(QWidget *parent) : QWidget(parent)
-{
+PopUp::PopUp(QWidget *parent) : QWidget(parent){
     setWindowFlags(Qt::FramelessWindowHint |        // Отключаем оформление окна
                    Qt::Tool |                       // Отменяем показ в качестве отдельного окна
                    Qt::WindowStaysOnTopHint);       // Устанавливаем поверх всех окон
@@ -39,13 +37,9 @@ PopUp::PopUp(QWidget *parent) : QWidget(parent)
     connect(timer, &QTimer::timeout, this, &PopUp::hideAnimation);
 }
 
-void PopUp::paintEvent(QPaintEvent *event)
-{
+void PopUp::paintEvent(QPaintEvent *event){
     Q_UNUSED(event)
 
-    /* А теперь настраиваем фон уведомления,
-     * который является прямоугольником с чёрным фоном
-     * */
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing); // Включаем сглаживание
 
@@ -64,8 +58,7 @@ void PopUp::paintEvent(QPaintEvent *event)
     painter.drawRoundedRect(roundedRect, 10, 10);
 }
 
-void PopUp::setPopupText(const QString &text)
-{
+void PopUp::setPopupText(const QString &text){
     label.setText(text);    // Устанавилваем текст в Label
     adjustSize();           // С пересчётом размеров уведомления
 }
@@ -87,8 +80,7 @@ void PopUp::show(){
     timer->start(3000);             // А также стартуем таймер, который запустит скрытие уведомления через 3 секунды
 }
 
-void PopUp::hideAnimation()
-{
+void PopUp::hideAnimation(){
     timer->stop();                  // Останавлвиваем таймер
     animation.setDuration(1000);    // Настравиваем длительность анимации
     animation.setStartValue(1.0);   // Стартовое значение будет 1 (полностью непрозрачный виджет)
@@ -96,23 +88,20 @@ void PopUp::hideAnimation()
     animation.start();              // И запускаем анимацию
 }
 
-void PopUp::hide()
-{
+void PopUp::hide(){
     // Если виджет прозрачный, то скрываем его
     if(getPopupOpacity() == 0.0){
         QWidget::hide();
     }
 }
 
-void PopUp::setPopupOpacity(float opacity)
-{
+void PopUp::setPopupOpacity(float opacity){
     popupOpacity = opacity;
 
     setWindowOpacity(opacity);
 }
 
-float PopUp::getPopupOpacity() const
-{
+float PopUp::getPopupOpacity() const{
     return popupOpacity;
 }
 

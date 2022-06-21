@@ -8,19 +8,16 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
 }
 
-Dialog::~Dialog()
-{
+Dialog::~Dialog(){
     delete ui;
 }
 
-void Dialog::on_yes_clicked()
-{
+void Dialog::on_yes_clicked(){
     emit s_yes_clicked();
     close();
 }
 
-void Dialog::on_no_clicked()
-{
+void Dialog::on_no_clicked(){
     close();
 
 }

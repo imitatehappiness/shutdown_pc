@@ -3,50 +3,44 @@
 
 
 int ms = 0;
-int timer_off;
+int timerOff;
 bool f = 0;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowTitle("SHUTDOWN TIMER");
 
-    //QMovie *movie = new QMovie(":/img/cat.gif");
-    //movie->setScaledSize(QSize(150,150));
-    //ui->gif->setMovie(movie);
-    //movie->start();
     time = new QTimer();
     ui->progressBar->setValue(0);
     popUp = new PopUp();
-
 }
 
 MainWindow::~MainWindow(){
     delete ui;
+    delete time;
+    delete popUp;
 }
 
 void MainWindow::shutdown(){
-    //qDebug()<<"SHUTDOWN";
     system("shutdown -s -t 0");
 }
 
 void MainWindow::update_label(){
-    timer_off++;
+    timerOff++;
 
-    if(ms/1000-timer_off==60){
+    if(ms/1000-timerOff==60){
         popUp->setPopupText("The PC will shut down after 1 min.");
         popUp->show();
     }
 
-    if(ms/1000-timer_off==300){
+    if(ms/1000-timerOff==300){
         popUp->setPopupText("The PC will shut down after 5 min.");
         popUp->show();
     }
 
-    ui->progressBar->setValue(timer_off);
-    ui->last_time->setText(QString::number(timer_off) + " : " +QString::number(ms/1000));
-
+    ui->progressBar->setValue(timerOff);
+    ui->last_time->setText(QString::number(timerOff) + " : " +QString::number(ms/1000));
 }
 
 void MainWindow::timer(){
@@ -57,26 +51,26 @@ void MainWindow::timer(){
 }
 void MainWindow::slot_shutdown()
 {
-    if(f){
-        delete timer_sec;
+    if(StopTimer){
+        delete timerSec;
     }
 
     ui->progressBar->setValue(0);
-    timer_sec = new QTimer();
+    timerSec = new QTimer();
 
-    timer_off = 0;
+    timerOff = 0;
     ms = (ui->hBox->text().toInt() * 3600 + ui->mBox->text().toInt() * 60) * 1000;
 
     popUp->setPopupText("The PC will shut down after " + QString::number(ms/1000) + "sec.");
     popUp->show();
 
-    ui->last_time->setText(QString::number(timer_off) + " : " + QString::number(ms/1000));
-    connect(timer_sec, SIGNAL(timeout()), this, SLOT(update_label()));
+    ui->last_time->setText(QString::number(timerOff) + " : " + QString::number(ms/1000));
+    connect(timerSec, SIGNAL(timeout()), this, SLOT(update_label()));
     ui->progressBar->setMaximum(ms/1000);
 
-    timer_sec->start(1000);
+    timerSec->start(1000);
     timer();
-    f = 1;
+    StopTimer = 1;
 }
 void MainWindow::on_shutdown_clicked(){
     Dialog *dialog;
@@ -87,14 +81,12 @@ void MainWindow::on_shutdown_clicked(){
 }
 
 void MainWindow::on_stop_clicked(){
-
-    if(f){
+    if(StopTimer){
         ui->progressBar->setValue(0);
         time->stop();
-        timer_sec->stop();
+        timerSec->stop();
         ui->last_time->setText("");
     }
-
 }
 
 

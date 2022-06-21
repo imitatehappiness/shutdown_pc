@@ -21,12 +21,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void timer();
-
-    bool f = 0;
-
-    QTimer *time;
-    QTimer *timer_sec;
-    PopUp *popUp;
 private slots:
     void on_shutdown_clicked();
     void shutdown();
@@ -36,6 +30,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    bool StopTimer = 0;
+    QTimer *time;
+    QTimer *timerSec;
+    PopUp *popUp;
 };
 
 #endif // MAINWINDOW_H
